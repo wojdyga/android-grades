@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/linearLayout1"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true" >
+
+        <ImageButton
+            android:id="@+id/editIB"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@android:drawable/ic_menu_edit" android:contentDescription="EDIT"/>
+
+        <TextView
+            android:id="@+id/taskTV"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="0.76"
+            android:gravity="center_vertical"
+            android:paddingLeft="10dp"
+            android:textAppearance="?android:attr/textAppearanceMedium" />
+
+        <TextView
+            android:id="@+id/gradeTV"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_gravity="right"
+            android:layout_weight="0.14"
+            android:gravity="center_vertical|right"
+            android:minEms="2"
+            android:paddingLeft="10dp"
+            android:paddingRight="16dp"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:textColor="#00cc22" />
+
+    </LinearLayout>

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:id="@+id/linearLayout1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+
+        <TextView
+            android:id="@+id/textView1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/namefragment" />
+
+        <EditText
+            android:id="@+id/nameFragmentET"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:inputType="textPersonName"
+            android:text="@string/min3chars" />
+
+        <ImageButton
+            android:id="@+id/clearIB"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@android:drawable/ic_input_delete" />
+
+    </LinearLayout>
+
+    <ListView
+        android:id="@+id/studentsLV"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+        <!-- Preview: listitem=@android:layout/simple_list_item_2 -->
+    </ListView>
+
+</LinearLayout>

@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Oceny</string>
+    <string-array name="main_menu">
+        <item >Oceny</item>
+        <item >Grupy i studenci</item>
+        <item >Baza danych</item>
+    </string-array>
+    <string-array name="db_menu">
+        <item >Zainicjuj pustą bazę</item>
+        <item >Otwórz bazę</item>
+        <item>Zaimportuj bazę</item><item >Wyeksportuj bieżącą bazę</item>       
+    </string-array>
+    <string name="create_empty">Czy chcesz utworzyć nową, pustą, wbudowaną bazę usuwając dotychczasową zawartość?</string>
+    <string name="yes">Tak</string>
+    <string name="no">Nie</string>
+    <string name="newfile">Nowy plik</string>
+    <string name="select">Wybierz plik</string>
+    <string name="file_name">Plik</string>
+    <string name="cancel">Anuluj</string>
+    <string name="create">Utwórz</string>
+    <string name="no_data">Brak danych</string>
+    <string name="location">Położenie pliku</string>
+    <string name="cant_read_folder">Nie mogę czytać folderu</string>
+    <string-array name="stud_group_menu">
+        <item >Dodaj grupę</item>
+        <item >Przeglądaj grupy</item>
+        <item >Dodaj studenta</item>
+        <item >Wyszukaj studenta</item>
+    </string-array>
+        <string name="className">Przedmiot</string>
+        <string name="classTime">Czas</string>
+        <string name="classPlace">Miejsce (sala)</string>
+    <string name="classGroup">Grupa dziekańska</string>
+    <string name="cant_add_group">Nie udało się dodać grupy</string>
+    <string name="add_group">Dodaj grupę</string>
+    <string name="new_group">Dodano nową grupę</string>
+    <string name="family_name">Nazwisko</string>
+    <string name="name">Imię</string>
+    <string name="indexNum">Numer indeksu</string>
+    <string name="key_num">Klucz skrzynki</string>
+    <string name="add_student">Dodaj studenta</string>
+    <string name="new_student">Dodano nowego studenta</string>
+    <string name="cant_add_student">Nie udało się dodać studenta</string>
+    <string name="pick_student_groups">Wybierz grupy dla studenta</string>
+    <string name="new_student_groups">Dodano studenta do grup</string>
+    <string name="cant_add_student_groups">Nie udało się dodać studenta do grup</string>
+    <string name="change_grade">Zmień ocenę</string>
+    <string name="task">Zadanie</string>
+    <string name="grade_changed">Ocena zmieniona</string>
+    <string name="cant_change_grade">Nie udało się zmienić oceny</string>
+    <string name="choose_group_actions">Wybierz akcję dla grupy</string>
+    <string-array name="group_actions">
+        <item >Edytuj grupę</item>
+        <item >Edytuj oceny</item>
+        <item >Edytuj studentów</item>
+    </string-array>
+    <string name="edit_group">Edytuj grupę</string>
+    <string name="cant_edit_group">Edycja grupy nie powiodła się</string>
+    <string name="group_changed">Zmieniono dane grupy</string>
+    <string name="new_grade">Utwórz nową ocenę</string>
+    <string name="grade_task">Treść zadania</string>
+    <string name="tasks">Zadania</string>
+    <string name="namefragment">Nazwisko</string>
+    <string name="min3chars">(przynajmniej 3 znaki)</string>
+    <string name="settings">Ustawienia</string>
+    <string name="last_file">Użyj ostatnio otwartego</string>
+    <string name="using_default_file">Aplikacja używa wbudowanej bazy danych</string>
+    <string name="using_last_file">Aplikacja używa ostatnio otworzonego pliku</string>
+    <string name="last_file_name">Ostatnio otworzony plik</string>
+    <string name="db_file">Plik bazy danych</string>
+</resources>
