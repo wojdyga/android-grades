@@ -31,6 +31,7 @@ public class MainMediator {
 	public static final String INDEXNUM_EXTRA = "pl.wojdyga.Oceny.indexnum";
 	public static final String KEYNUM_EXTRA = "pl.wojdyga.Oceny.keynum";
 	public static final String LASTTASKNAME_EXTRA = "pl.wojdyga.Oceny.lasttaskname";
+	public static final String LASTSTUDENTID_EXTRA = "pl.wojdyga.Oceny.laststudentid";
 	
 	public static final int ADD_GRADE_REQUEST = 0;
 	public static final int EDIT_GRADE_REQUEST = 1;
@@ -40,10 +41,12 @@ public class MainMediator {
 	public static final int BROWSE_STUDENT_REQUEST = 5;
 	
 	private String lastClickedTaskName;
+	private String lastClickedStudentID;
 	
 	private MainMediator ()
 	{
 		lastClickedTaskName = "(null)";
+		lastClickedStudentID = "0";
 	}
 	
 	public void startPickGroup (Activity act)
@@ -58,6 +61,7 @@ public class MainMediator {
 		
 		Intent intent = new Intent(act, PickStudentActivity.class);
 		intent.putExtra(GROUPID_EXTRA, groupID);		
+		intent.putExtra(LASTSTUDENTID_EXTRA, lastClickedStudentID);
 		act.startActivity(intent);
 	}
 	
@@ -254,5 +258,9 @@ public class MainMediator {
 
 	public void setLastClickedTaskName(String taskName) {
 		lastClickedTaskName = taskName;
+	}
+
+	public void setLastClickedStudentID(String studentID) {
+		lastClickedStudentID = studentID;
 	}
 }
