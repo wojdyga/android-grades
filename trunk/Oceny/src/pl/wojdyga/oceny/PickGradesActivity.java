@@ -23,28 +23,28 @@ import android.widget.TextView;
 public class PickGradesActivity 
 	extends ListActivity  
 {
+	String taskName;
+	
 	@Override	
 	public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         
-        i = 0;
+        taskName = getIntent().getStringExtra(MainMediator.LASTTASKNAME_EXTRA);
         updateListAdapter();
 	}
-	
-	int i;
 	
 	private void updateListAdapter ()
 	{
 		String groupId = getIntent().getStringExtra(MainMediator.GROUPID_EXTRA);
-        String studentId = getIntent().getStringExtra(MainMediator.STUDENTID_EXTRA);
-        String taskName = getIntent().getStringExtra(MainMediator.LASTTASKNAME_EXTRA);
+        String studentId = getIntent().getStringExtra(MainMediator.STUDENTID_EXTRA);        
         
 		try {
 			Cursor cursor = DBAdapter.getInstance().getGradesCursor(groupId, studentId);
 			GradeInfoArray array = new GradeInfoArray(cursor);
 			
 	        setListAdapter(new MyCustomBaseAdapter(this, array, getListView()));
-	        	        
+	        	       
+	        int i;
 	        for (i = array.grades.length - 1; 
 	        	 (i >= 0) && (array.grades[i].taskName.compareTo(taskName) != 0); 
 	        	 i--) {
@@ -64,6 +64,12 @@ public class PickGradesActivity
 	{
 		super.onRestart(); 
 		updateListAdapter(); 
+	}
+	
+	void rememberLastClickedTaskName (String name)
+	{
+		taskName = name;
+		MainMediator.getInstance().setLastClickedTaskName (taskName);
 	}
 }
 
@@ -97,7 +103,7 @@ class GradeInfoArray {
 class MyCustomBaseAdapter extends BaseAdapter {
 	GradeInfoArray array;
 	private LayoutInflater mInflater;
-	Activity act;
+	PickGradesActivity act;
 	ClickGradeListener clickGradeListener;
 	
 	class ViewHolder {
@@ -106,7 +112,7 @@ class MyCustomBaseAdapter extends BaseAdapter {
 		TextView gradeTV;
 	}
 	 
-	 public MyCustomBaseAdapter(Activity _act, GradeInfoArray _array, ListView listView) 
+	 public MyCustomBaseAdapter(PickGradesActivity _act, GradeInfoArray _array, ListView listView) 
 	 {
 		 array = _array;
 		 act = _act;
@@ -162,11 +168,11 @@ class MyCustomBaseAdapter extends BaseAdapter {
 }
 
 class ClickGradeListener implements OnClickListener {
-	Activity activity;
+	PickGradesActivity activity;
 	GradeInfoArray infos;
 	ListView listView;
 	
-	public ClickGradeListener(Activity _activity, GradeInfoArray _infos, ListView _listView) {
+	public ClickGradeListener(PickGradesActivity _activity, GradeInfoArray _infos, ListView _listView) {
 		activity = _activity;
 		infos = _infos;
 		listView = _listView;
@@ -186,7 +192,7 @@ class ClickGradeListener implements OnClickListener {
 		
 		//Log.d("", "idStudentGrade="+idStudentGrade+" grade="+grade+" idStudent="+idStudent+" idTask="+idTask+" taskName="+taskName);
 
-		MainMediator.getInstance().setLastClickedTaskName (taskName);
+		activity.rememberLastClickedTaskName(taskName);
 		
 		if (idStudentGrade.compareTo("-1") == 0) {
 			MainMediator.getInstance().startNewGrade(activity, idStudent, idTask, taskName);			
