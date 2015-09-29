@@ -1,0 +1,1 @@
+Application allows for managing students, student groups and tasks. Each task can be granted a grade, which is number withouta any limitation. Teacher can add different tasks for different groups. Grades are stored in SQLite database, which can be exported to or imported from SD card.
